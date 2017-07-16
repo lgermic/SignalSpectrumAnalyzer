@@ -1,0 +1,120 @@
+IConnect S-parameter Wizard V6.1.0
+Log filename: DUT_1_log.txt
+Measurements started: 4/6/2017 12:26:25 PM
+Measurement folder: C:\Users\Tek_Local_Admin\Documents\leo\sparam\test_viaboard\20170406\test1
+IConnect.exe folder: C:\Program Files\TekApplications\IConnect\Program Files\
+IConnect Version: Version 6.1.0 build 10
+DUT #1
+Reference Waveforms will be measured
+Scope ID: TEKTRONIX,DSA8300,C050192,CF:91.1CT FV:6.3.1.4, C050192
+# Ports: 2 Single Ended
+Port 1 (CH1): 80E044, B023690
+Port 2 (CH2): 80E044, B023690
+Cal Type: Thru & Load
+Timebase: Auto
+Record Length: 16000
+Max Record Length: 16000
+Averages: 100
+Frequency Autoset: On
+Z-Line: On, Threshold: 35%
+
+Module Deskew
+Port 1 (CH1) Tclock: 38443.515 ps
+Port 2 (CH2) Tclock: 38444.82 ps
+Port 1 (CH1) Module Skew: 0. ps
+Port 2 (CH2) Module Skew: 1.306 ps
+
+Deskew Cables/Probes/Fixtures
+Port 1 (CH1) TDR Cable/Probe/Fixture Delay: 2.885 ns
+Port 2 (CH2) TDR Cable/Probe/Fixture Delay: 2.871 ns
+Port 1 (CH1) Acquisition Skew at DUT: 7.081 ps
+Port 2 (CH2) Acquisition Skew at DUT: 1.306 ps
+Reference Plane: 41.256 ns
+Port 1 (CH1) Target for TDR Incindent Step: 38.371 ns
+Port 2 (CH2) Target for TDR Incindent Step: 38.385 ns
+
+Set Timebase: Auto
+TDR Step On Port 1 (CH1)
+deskewAdjust: 0.487 ps
+STEPSKEW(port): 0.487 ps
+DUT TDT, Low Level: -3.90944253217E-05
+DUT TDT, Mid Level: 0.11873817444
+DUT TDT, High Level: 0.23727647871
+DUT TDT delay: 675.616 ps
+Autoset TPD: 0.5 ns
+HPOS: 40.756 ns
+deltaT: 0. ns
+Autoset deltaF: 40 MHz
+Autoset Fmax: 20 GHz
+Auto Record Length: 16000
+
+Timebase Settings:
+Reference Plane: 41.256 ns
+Horiz. Pos. Reference: 0%
+Horiz. Position: 40.756 ns
+Horiz. Scale: 0.5 ns
+
+Measure: DUT, stimulus Port 1
+TDR Step On Port 1 (CH1)
+deskewAdjust: 0.248 ps
+STEPSKEW(port): 0.735 ps
+DUT_1_11.wfm saved
+DUT_1_21.wfm saved
+
+Measure: DUT, stimulus Port 2
+TDR Step On Port 2 (CH2)
+deskewAdjust: 17.7 ps
+STEPSKEW(port): 17.7 ps
+DUT_1_12.wfm saved
+DUT_1_22.wfm saved
+
+Measure Thru21.wfm
+TDR Step On Port 1 (CH1)
+deskewAdjust: 0.747 ps
+STEPSKEW(port): 1.483 ps
+Thru21 Risetime: 28.833 ps
+Thru21.wfm saved
+
+Measure Thru12.wfm
+TDR Step On Port 2 (CH2)
+deskewAdjust: -0.492 ps
+STEPSKEW(port): 17.208 ps
+Thru12 Risetime: 27.305 ps
+Thru12.wfm saved
+
+Measure Load1.wfm
+TDR Step On Port 1 (CH1)
+deskewAdjust: -0.221 ps
+STEPSKEW(port): 1.262 ps
+Load1.wfm saved
+
+Measure Load2.wfm
+TDR Step On Port 2 (CH2)
+deskewAdjust: 0.612 ps
+STEPSKEW(port): 17.821 ps
+Load2.wfm saved
+
+Frequency Step: 40 MHz
+Frequency Range: 20 GHz
+
+IConnect -c Spar -Cal TL -npE 2 -CalThru1 Thru21.wfm -CalLoad1 Load1.wfm -TDR11 DUT_1_11.wfm -TDT21 DUT_1_21.wfm -CalThru2 Thru12.wfm -CalLoad2 Load2.wfm -TDT12 DUT_1_12.wfm -TDR22 DUT_1_22.wfm -dF 40000000 -fmax 20000000000 -Outfile DUT_1_S -LogFile DUT_1_log.txt -LogLevel 1
+Apr-06 12:33:47.771: Log Started
+Apr-06 12:33:47.771: C:\Program Files\TekApplications\IConnect\Program Files\IConnect.exe
+Apr-06 12:33:48.365: The command completed successfully.
+
+IConnect -c tStone -npE 2 -CT SE -S11 DUT_1_S11.wfm -S21 DUT_1_S21.wfm -S12 DUT_1_S12.wfm -S22 DUT_1_S22.wfm  -Outfile DUT_1_SE.s2p -LogFile DUT_1_log.txt -LogLevel 1 
+Apr-06 12:33:50.099: Log Started
+Apr-06 12:33:50.099: C:\Program Files\TekApplications\IConnect\Program Files\IConnect.exe
+Apr-06 12:33:50.177: The command completed successfully.
+
+IConnect -c Zline -Cal OL -CalOpen Thru21.wfm -CalLoad Load1.wfm -TDR DUT_1_11.wfm -Thd 35 -Z0 50 -OutFile DUT_1_Zline_11.wfm -LogFile DUT_1_log.txt -LogLevel 1
+Apr-06 12:33:51.904: Log Started
+Apr-06 12:33:51.904: C:\Program Files\TekApplications\IConnect\Program Files\IConnect.exe
+Apr-06 12:33:52.998: The command completed successfully.
+
+IConnect -c Zline -Cal OL -CalOpen Thru12.wfm -CalLoad Load2.wfm -TDR DUT_1_22.wfm -Thd 35 -Z0 50 -OutFile DUT_1_Zline_22.wfm -LogFile DUT_1_log.txt -LogLevel 1
+Apr-06 12:33:54.724: Log Started
+Apr-06 12:33:54.724: C:\Program Files\TekApplications\IConnect\Program Files\IConnect.exe
+Apr-06 12:33:55.833: The command completed successfully.
+
+Finished: 4/6/2017 12:33:57 PM
